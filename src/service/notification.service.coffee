@@ -44,12 +44,10 @@ angular.module 'picstreet'
 
 					PushNotification.hasPermission (permission) ->
 						
-						console.log '$notification:request : ', permission
 						callback permission
 
 				else
 					PushNotification = undefined
-					console.log '$notification:request psuhnotification is undefined'
 
 
 		register: ->
@@ -57,14 +55,13 @@ angular.module 'picstreet'
 				
 				if window.cordova and PushNotification
 					
-					console.log 'Push Plugin is present'
 
 					$localStorage.device = {} unless $localStorage.device
 					$localStorage.device.info = $cordovaDevice.getDevice()
 
 					push = PushNotification.init
 						android:
-							senderID: "12345679"
+							senderID: "1014176575540"
 						ios:
 							alert: true
 							badge: true
@@ -72,13 +69,9 @@ angular.module 'picstreet'
 
 					push.on 'registration', (data) -> 
 						console.log "*************************************"
-						console.log "*************************************"
-						console.log "*************************************"
 						console.log "data : ", data.registrationId
 						console.log "*************************************"
-						console.log "*************************************"
-						console.log "*************************************"
-						console.log '$notification:register : ', data
+
 						$localStorage.deviceToken = data.registrationId
 
 					$rootScope.$on 'request:connect', (e, me) ->
@@ -87,7 +80,6 @@ angular.module 'picstreet'
 
 							$localStorage.device = {} unless $localStorage.device
 							$localStorage.device[me.id] = {} unless $localStorage.device[me.id]
-
 							$localStorage.device[me.id].info = $cordovaDevice.getDevice()
 							$localStorage.device[me.id].token = $localStorage.deviceToken
 							$localStorage.device[me.id].customerId = me.id
@@ -96,8 +88,6 @@ angular.module 'picstreet'
 							Device.upsert $localStorage.device[me.id]
 							.$promise
 							.then (success) -> 
-								console.log 'DEVICE BEFORE SEND : ', $localStorage.device[me.id]
-								console.log 'DEVICE SUCCESS : ', success
 								$localStorage.device[me.id] = success unless success.error
 							.catch (err) -> console.log 'err save device: ', err
 
@@ -107,20 +97,17 @@ angular.module 'picstreet'
 		watch: ->
 
 			handlerNotification = (notification) ->
-				console.log '\n\n-----------------------------------------------'
+				console.log '\n\n'
+				console.log '-----------------------------------------------'
 				console.log '| New Notification', notification
 				console.log '-----------------------------------------------'
 				console.log '| types : ', types
 				console.log '-----------------------------------------------'
+				console.log '\n\n'
 
 				for typeName, typeValue of types
 
-					console.log '| -> try : ' + typeName + ' equal ' + notification.additionalData.type
-
-
 					if notification.additionalData.type.match ///^#{typeName}///
-
-						console.log '| ** notification match ** ', typeName
 
 						if moment() - __uptime < 3000
 
@@ -150,29 +137,12 @@ angular.module 'picstreet'
 				
 				if window.cordova and PushNotification
 					
-					console.log 'WATCH :)'
-
 					push.on 'notification', (notification) -> 
 						handlerNotification notification
 
 				else
 
 					console.log 'NOT WATCH :('
-				
-			# else
-			# 	# Mock Notification
-			# 	setTimeout ->
-			# 		fn 
-			# 			message: 'Fake Notification'
-			# 			additionalData: 
-			# 				roomId: "56db8318538cc94d86623ddb"
-			# 				foreground: true
-			# 				type: "chat:text"
-			# 				data: 
-			# 					type: "text"
-			# 					description: "gjhgj"
-			# 	, 5000
-
 
 		type: (typeName, opts={}) ->
 
@@ -191,4 +161,41 @@ angular.module 'picstreet'
 			, notification
 			, opts
 			, clickCallback
+
+.run ($notification) ->
+
+	$notification
+	#---------------------------------------------------
+	# Album Notification Configuration
+	#---------------------------------------------------
+	.type 'album:new',
+
+		state:
+			#this param determine if notify or update
+			name: ''
+
+			#link $stateParams.id to notification.additionalData.roomId
+			paramsLink: id: 'albumId'
+		
+		# when the app is close or in background
+		deep: (notification) ->
+			console.log '----------------------'
+			console.log 'deep : ', notification
+			console.log '----------------------'
+
+		# when the app isn't in the good state
+		notify: (notification) ->
+			console.log '----------------------'
+			console.log 'notify : ', notification
+			console.log '----------------------'
+
+		# when the app is in the good state
+		update: (notification) ->
+			console.log '----------------------'
+			console.log 'update : ', notification
+			console.log '----------------------'
+			
+			
+
+
 

@@ -87,6 +87,9 @@ angular.module 'picstreet', [
 					direction: "left"
 					duration: 400
 				
+				$notification.request()
+				$notification.register()
+				
 				$geolocation.init()
 				$geolocation.watch()
 
