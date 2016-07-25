@@ -1,0 +1,46 @@
+#signup {
+
+	ion-content {
+		width: 100vw;
+		height: 100vh;
+
+		background: black;
+		
+		.make-xs-column(12);
+		
+		.form-signup {
+			.make-xs-column(12);
+		}
+		.logo {
+
+			display:flex;
+			justify-content: center;
+			.picto {
+				border: 2px solid white;
+				padding: 20px;
+				margin: 20px;
+				border-radius: 5px;
+				background: black;
+			}
+		}
+
+		label {
+			span, input {color:white;}
+			background-color: rgba(255,255,255,0.3);
+		}
+		button {
+			background: @blue;
+			color:white;
+		}
+		.action-back {
+			.make-xs-column(12);
+		}
+		.logo,
+		.form-signup {
+			.text-uppercase;
+			.make-xs-column(12);
+			padding-top: 7vh;
+			// border: 2px solid red;
+		}
+	}
+}

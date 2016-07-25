@@ -1,0 +1,21 @@
+{
+	"client": {
+		"name": "picstreet",
+		"path": {
+			"src": "src",
+			"build": "www"
+		}
+	},
+	"server": {
+		"name":"picstreet-server",
+		"path": "../../server/server.coffee"
+	},
+	"common": {
+		"path": "../../common"
+	},
+	"bower": {
+		"json": "bower.json",
+		"directory":"www/lib"
+	}
+
+}

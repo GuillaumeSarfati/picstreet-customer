@@ -1,0 +1,108 @@
+ion-modal-view(title="'My Pictures'")#pictures
+	.flip-container
+		.flipper.animated(ng-class="{flipCard: animateFlip}")
+			.front.animated
+				.bar.bar-header
+					h1.title My Pictures
+					button.button.button-clear(
+						ng-click="modal.hide()"
+					) {{'close' | translate}}
+
+					
+				ion-content.pictures-content
+
+					.album(
+						ng-repeat="album in albums"
+						ng-if="album.pictures.length"
+					)		
+						.album-header
+							.name {{ album.name }}
+							.date {{ album.date | date: 'dddd DD MMMM YYYY'}}
+						.pictures
+							.picture(
+								ng-repeat="picture in album.pictures"
+								style="background: url('{{api}}/api/Buckets/ppxpicturesresized/download/resized-{{picture.name}}');background-size:cover;background-repeat:no-repeat;"
+								ng-click="switch(picture)"
+								)
+									i(
+										ng-if="!picture.purchase"
+										ng-class="{'ion-ios-circle-outline': !picture.booking, 'ion-ios-checkmark': picture.booking}"
+										ng-click="bookPicture($event, picture)"
+									)
+				ion-footer-bar.bar.bar-black.payment-content(
+					ng-class="{'show-payment': showPayment == true, 'hide-payment': showPayment == false}"
+					
+				)
+					.title(
+						ng-if="!showPayment"
+						ng-click="!showPayment ? goToPayment() : null"
+					) Buy {{ total }} €
+
+					.content(ng-if="showPayment")
+						
+
+						.frame
+							.pictures-quantity
+								.number {{ purchase.pictures.length }}
+								
+								.text {{purchase.pictures.length > 1  ? 'Pictures' : 'Picture' }}
+
+							.pictures-price 
+								.number {{ purchase.price }}
+								.text {{ purchase.price  > 1  ? 'Euros' : 'Euro' }}
+
+							.promotion-code(
+								ng-if="purchase.promotionCodeId == undefined"
+								ng-click="addPromotionCode()"
+							) + Type promotion code
+						
+						.payment-bar
+							img(src="img/svg/payment-bar.svg")
+						
+						.credit-card-switcher 
+							.credit-card(
+								ng-if="!$root.me.defaultCreditCard"
+								ng-click="openModalPaymentMethods()"
+							) 
+								.add Add Credit Card
+
+							.credit-card(
+								ng-if="$root.me.defaultCreditCard"
+								ng-click="openModalPaymentMethods()"
+							)
+								.brand
+									.brand-logo
+										img.animated.fadeIn(
+											ng-src="img/svg/visa.svg"
+										)
+								.number **** **** **** {{card.last4}}
+							.payment
+								.text.text-cancel(ng-click="cancel(purchase)") Cancel
+								.text.text-valid(ng-click="buy(purchase)") Valid
+						
+
+
+			.back.animated
+				.bar.bar-header
+					h1.title Picture
+					button.button.button-clear(
+						ng-click="switch()"
+					) {{'switch' | translate}}
+
+
+				ion-scroll.picture-content(
+					zooming="true"
+					direction="xy"
+				)
+					.watermark(ng-if="currentPicture.purchase != true")
+
+					img(
+						ng-if="currentPicture"
+						ng-src="{{api}}/api/Buckets/ppxpictures/download/{{currentPicture.name}}"
+					)
+				.bar-booking
+					i(
+						ng-if="currentPicture.purchase != true"
+						ng-class="{'ion-ios-circle-outline': !currentPicture.booking, 'ion-ios-checkmark': currentPicture.booking}"
+						ng-click="bookPicture($event, currentPicture)"
+					)

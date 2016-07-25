@@ -1,0 +1,46 @@
+ion-view(title="PicStreet")
+	ion-pane
+		#map
+	
+	#item-control-center(ng-click="center()")
+		i.ion-navigate
+
+	//- #-------------------------------------------
+	#item-xxx
+		ion-slides(
+			options="options"
+			slider="data.slider"
+		)
+			ion-slide-page.first-slide
+				.first-slide-content
+					.previous
+					.description
+						.text You can order a free shooting or directly join a photographer on the most beautiful spot of the world
+					.next
+						i.ion-ios-arrow-right
+				.action
+					button.button.button-block.button-dark(ng-click="reserve()") Reserve Photographer
+
+			ion-slide-page(
+				ng-repeat="monument in monuments"
+				ng-click="center(monument)"
+			) 
+				.monument-right
+					img(
+						ng-src="{{api}}/api/Buckets/picstreet-location/download/{{monument.picture}}"
+					)
+				.monument-left
+					.name {{ monument.name }}
+					.photographer 
+						.text Photographer available
+						.icon-available
+							i
+							i
+					.description
+						i.ion-ios-star
+						i.ion-ios-star
+						i.ion-ios-star
+						i.ion-ios-star
+						i.ion-ios-star
+			
+

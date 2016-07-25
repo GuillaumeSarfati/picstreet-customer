@@ -1,0 +1,118 @@
+{
+  "name": "PicStreet",
+  "version": "1.0.0",
+  "description": "Awesome App",
+  "dependencies": {
+    "async": "^1.5.0",
+    "aws-sdk": "^2.2.39",
+    "coffee-script": "^1.8.0",
+    "compression": "^1.0.3",
+    "cors": "2.5.2",
+    "errorhandler": "^1.1.1",
+    "event-stream": "^3.3.2",
+    "geocoder": "^0.2.2",
+    "google-geocoder": "^0.1.4",
+    "google-timezone-api": "^1.0.1",
+    "gulp-consolidate": "^0.1.2",
+    "gulp-iconfont": "^5.0.1",
+    "loopback": "^2.25.0",
+    "loopback-boot": "^2.14.2",
+    "loopback-component-explorer": "^2.1.1",
+    "loopback-component-storage": "^1.6.0",
+    "loopback-connector-mongodb": "^1.13.1",
+    "loopback-connector-redis": "0.0.3",
+    "loopback-connector-sendgrid": "^1.2.2",
+    "loopback-connector-sns": "0.0.6",
+    "loopback-connector-twilio": "^0.5.1",
+    "loopback-datasource-juggler": "^2.19.0",
+    "loopback-storage-service": "^1.0.4",
+    "moment": "^2.10.6",
+    "moment-timezone": "^0.5.0",
+    "money": "^0.2.0",
+    "open-exchange-rates": "https://github.com/gsarfati/npm-exchange-rates",
+    "pm2": "^1.0.2",
+    "rand-token": "^0.2.1",
+    "redis": "^2.4.2",
+    "request": "^2.67.0",
+    "serve-favicon": "^2.0.1",
+    "socket.io": "^1.3.7",
+    "socketio-auth": "0.0.5",
+    "stripe": "^4.2.0"
+  },
+  "devDependencies": {
+    "bower": "^1.3.3",
+    "gulp": "^3.5.6",
+    "gulp-angular-templatecache": "^1.6.0",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-bower-files": "^0.2.7",
+    "gulp-coffee": "^2.2.0",
+    "gulp-concat": "^2.4.1",
+    "gulp-filter": "~1.0.2",
+    "gulp-flatten": "0.0.4",
+    "gulp-iconfont-css": "^2.1.0",
+    "gulp-jade": "^0.9.0",
+    "gulp-less": "^1.3.6",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-loopback-sdk-angular": "^0.1.3",
+    "gulp-minify-css": "^0.3.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.3",
+    "gulp-sass": "^1.3.3",
+    "gulp-util": "^2.2.14",
+    "lodash": "^3.10.1",
+    "main-bower-files": "^2.4.0",
+    "shelljs": "^0.3.0"
+  },
+  "optionalDependencies": {
+    "loopback-explorer": "^1.1.0"
+  },
+  "cordovaPlugins": [
+    "cordova-plugin-device",
+    "cordova-plugin-console",
+    "cordova-plugin-whitelist",
+    "cordova-plugin-splashscreen",
+    "com.ionic.keyboard",
+    "cordova-plugin-statusbar",
+    "cordova-plugin-inappbrowser",
+    {
+      "locator": "https://github.com/danwilson/google-analytics-plugin.git",
+      "id": "cordova-plugin-google-analytics"
+    },
+    "add",
+    "org.apache.cordova.splashscreen",
+    "org.apache.cordova.statusbar",
+    {
+      "variables": {
+        "URL_SCHEME": "bb"
+      },
+      "locator": "https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin.git",
+      "id": "cordova-plugin-customurlscheme"
+    },
+    {
+      "locator": "https://github.com/Telerik-Verified-Plugins/NativePageTransitions#0.6.2",
+      "id": "com.telerik.plugins.nativepagetransitions"
+    },
+    "cordova-plugin-wkwebview",
+    "phonegap-plugin-push",
+    "de.appplant.cordova.plugin.background-mode",
+    "ionic-plugin-keyboard",
+    "cordova-plugin-camera",
+    "phonegap-plugin-push@1.5.3",
+    "cordova-plugin-geolocation",
+    {
+      "locator": "https://github.com/EddyVerbruggen/cordova-plugin-actionsheet.git",
+      "id": "cordova-plugin-actionsheet"
+    },
+    {
+      "locator": "https://github.com/danwilson/google-analytics-plugin.git",
+      "id": "cordova-plugin-facebook4"
+    },
+    "card.io.cordova.mobilesdk"
+  ],
+  "cordovaPlatforms": [
+    "android",
+    "ios"
+  ]
+}

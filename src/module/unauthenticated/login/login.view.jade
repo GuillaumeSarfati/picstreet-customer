@@ -1,0 +1,31 @@
+ion-view(title="PIXER")#login
+	ion-content 
+		.logo
+			.picto
+				img(src="img/svg/logo.svg")
+
+		.form-login
+			label.item.item-input
+				span.input-label Email
+				input(
+					type="email"
+					autocomplete="off"
+					autocapitalize="off"
+					ng-model="me.email"
+				)
+
+			label.item.item-input
+				span.input-label Password
+				input(
+					type="password"
+					ng-model="me.password"
+				)
+
+			button.button.button-block.login(
+				ng-click="login(me)"
+			) Login
+		
+		.action-signup
+			button.button.button-block.signup(
+				ng-click="signup()"
+			) Signup

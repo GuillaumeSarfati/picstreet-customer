@@ -1,0 +1,43 @@
+ion-view(title="PIXER")#signup
+	ion-content 
+		.logo
+			.picto
+				img(src="img/svg/logo.svg")
+
+		.form-signup
+			label.item.item-input
+				span.input-label Firstname
+				input(
+					type="text"
+					ng-model="me.firstname"
+				)
+
+			label.item.item-input
+				span.input-label Lastname
+				input(
+					type="text"
+					ng-model="me.lastname"
+				)
+
+			label.item.item-input
+				span.input-label Email
+				input(
+					type="text"
+					ng-model="me.email"
+				)
+
+			label.item.item-input
+				span.input-label Password
+				input(
+					type="password"
+					ng-model="me.password"
+				)
+
+			button.button.button-block.login(
+				ng-click="signup(me)"
+			) Signup
+			
+		.action-back
+			button.button.button-block.signup(
+				ng-click="back()"
+			) Back

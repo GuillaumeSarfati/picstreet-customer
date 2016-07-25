@@ -1,0 +1,8 @@
+www
+plugins
+platforms/ios
+platforms/android
+node_modules
+bower_components
+
+.DS_Store

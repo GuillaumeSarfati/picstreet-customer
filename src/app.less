@@ -1,0 +1,81 @@
+
+@bower-components: '../www/lib';
+
+@import "@{bower-components}/bootstrap/less/bootstrap";
+@import "@{bower-components}/animate.less/animate";
+
+ion-header-bar {
+	.title {
+		.text-uppercase;
+
+	}
+}
+
+.bar {
+	.title {
+		.text-uppercase;
+	}
+}
+
+// Global Style
+@import 'style/variable';
+@import 'style/animate';
+@import 'style/modal';
+
+// Modules UNAUTHENTICATED
+@import 'directives/notification/notification';
+@import 'directives/markers/photographer.marker.less';
+
+@import 'module/unauthenticated/login/login';
+@import 'module/unauthenticated/signup/signup';
+
+// Modules AUTHENTICATED
+@import 'module/authenticated/authenticated';
+@import 'module/authenticated/map/map';
+@import 'module/authenticated/payment/payment';
+@import 'module/authenticated/pictures/pictures';
+
+// MARKERS
+
+
+#intercom-launcher {
+	position:fixed;
+	border: 5px solid red;
+	z-index:9999;
+}
+body, html, {
+	width: 100vw;
+	height: 100vh;
+	.ui-ios;
+}
+
+* { font-family: helvetica }
+
+.ui-color {background: @dark !important;}
+.ui-ios {background: @light !important;}
+
+.bar.bar-header {border-bottom: 1px solid @borderColor;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.flex-center-row {
+	display:flex;
+	justify-content: center;
+	flex-direction:row;
+}
+.flex-center-column {
+	display:flex;
+	justify-content: center;
+	flex-direction:column;
+}

@@ -1,0 +1,24 @@
+ion-modal-view(title="{{ 'creditCard' | translate }}")
+	ion-view(title="{{ 'creditCard' | translate }}")#payment
+		.bar.bar-header
+			h1.title {{ 'creditCard' | translate }}
+			button.button.button-clear(
+				ng-click="modal.hide()"
+			) {{'close' | translate}}
+
+			
+		ion-content
+
+			ion-item.credit-card(
+				ng-repeat="card in $root.me.creditCards"
+				ng-click="changeCard(card)"
+			)
+				.brand 
+					img.animated.fadeIn(ng-src="img/svg/{{ card.brand.split(' ').join('').toLowerCase()}}.svg")
+				.number **** **** **** {{ card.last4 }}
+				.default 
+
+		ion-footer-bar.bar-dark(ng-click="scanCard()")
+			
+			.title {{ 'scanCreditCard' | translate }}
+

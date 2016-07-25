@@ -1,0 +1,10 @@
+{
+  "name": "PicStreet",
+  "app_id": "",
+  "watchPatterns": [
+    "www/**/*"
+  ],
+  "gulpStartupTasks": [
+    "watch"
+  ]
+}

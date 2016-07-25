@@ -1,0 +1,54 @@
+
+ion-side-menus#authenticated
+
+	ion-side-menu-content(drag-content="false")
+		
+		ion-nav-bar.bar-dark.ui-color(
+			sync-opacity
+			no-tap-scroll="false"
+			align-title="center"
+			ng-class="{translateleft: searchIsOpen, translateright: !searchIsOpen}"
+		)
+
+			ion-nav-back-button.color-primary(ng-click="$root.stateGoBack()") {{'back' | translate }}
+
+			ion-nav-buttons(side="left")
+				button.button.button-icon.button-clear.ion-navicon(menu-toggle="left")
+
+			ion-nav-buttons(side="right")
+				button.button.button-icon.button-clear.ion-ios-help-outline(ng-click="showIntercom()")
+		
+		ion-nav-view(name="menuContent" animation="no-animation")
+
+	ion-side-menu(side="left")
+		.me
+			.picto: img(src="img/svg/logo.svg")
+			.name {{ $root.me.firstname }} {{ $root.me.lastname }}
+
+		.links
+
+			ion-item(
+				menu-close
+				ng-click="openModalMyPictures()"
+			)
+				.icon: i.custom-icon.custom-icon-business
+				.title My Pictures
+			
+			ion-item(
+				menu-close
+				ng-click="openModalPaymentMethods()"
+			)
+				.icon: i.custom-icon.custom-icon-business
+				.title Payment Methods
+
+			ion-item(
+				menu-close
+				ng-click="logout()"
+			)
+				.icon: i.custom-icon.custom-icon-business
+				.title Logout
+		
+		.picto-bar
+			img(src="img/svg/payment-bar.svg")
+
+		

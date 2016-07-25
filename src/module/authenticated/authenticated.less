@@ -1,0 +1,41 @@
+#authenticated {
+	ion-side-menu[side="left"] {
+		background: rgb(21, 21, 21);
+		display: flex;
+		justify-content:space-between;
+		flex-direction:column;
+		ion-item {
+			.text-center;
+			background: none;
+			color:white;
+			border: none;
+
+			&:last-child {
+				padding-bottom: 20vh;
+			}
+		}
+	}
+	.me {
+		display: flex;
+		justify-content:center;
+		flex-direction:column;
+		.picto,
+		.name {
+			.text-uppercase;
+			padding-top: 40px;
+			color:@blue;
+			font-size: 1.3em;
+			display: flex;
+			justify-content:center;
+		}
+		.picto {
+			padding-top: 10vh;
+		}
+	}
+	.picto-bar {
+		transform: rotateX(180deg);
+		width: 100%;
+		display: flex;
+		justify-content:center;
+	}
+}

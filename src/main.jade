@@ -1,0 +1,40 @@
+doctype html
+html
+	head
+		meta(charset='utf-8')
+		meta(name='viewport', content='initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width')
+		meta(name="format-detection" content="telephone=no")
+		//- meta(http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'")
+		title PicStreet
+		link(href='css/app.css', rel='stylesheet')
+		//- link(href='css/picstreet.css', rel='stylesheet')
+		link(href='lib/ionic/css/ionic.css', rel='stylesheet')
+
+	body(ng-app='picstreet' id="fb-root")
+
+
+		notification
+
+		ion-nav-view
+			
+	script(src='cordova.js')
+	script(src="https://js.stripe.com/v2/" async)
+		
+	//- script(src='js/facebookConnectPlugin.js')
+	script(src='static/socket.io.js')
+
+	script(src='lib/ionic/js/ionic.bundle.js')
+	script(src="lib/ionic-service-core/ionic-core.js")
+	script(src="lib/ionic-service-push/ionic-push.js")
+
+	script(src='js/vendors.js')
+	script(src='https://api.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.js')
+	link(href='https://api.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.css' rel='stylesheet')
+	script(src='js/api.js')
+	script(src='js/app.js')
+	script(src='js/templates.js')
+
+	script.
+		(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/t1fie9we';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+	//- script.
+	//- 	Intercom('boot', {app_id: "t1fie9we"})

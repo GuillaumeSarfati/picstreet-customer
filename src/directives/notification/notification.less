@@ -1,0 +1,142 @@
+.notification-backdrop {
+	.animated;
+
+	pointer-events: none;
+	background:rgba(0,0,0,0.3);
+	opacity: 0;
+	
+	top: 0vh;
+	left: 0vw;
+
+	width: 100vw;
+	height: 100vh;
+
+	position:fixed;
+
+	z-index: 999999999998;
+
+
+	@keyframes notificationBackdropHide {
+		from {
+			opacity: 1;
+		}
+		to {
+			opacity: 0;
+		}
+	}
+	@keyframes notificationBackdropShow {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+	&.backdrop-hide {
+
+		animation-name: notificationBackdropHide;
+		animation-duration: 1s;
+		pointer-events: none;
+
+	}
+	&.backdrop-show {
+
+		animation-name: notificationBackdropShow;
+		animation-duration: 1s;
+		pointer-events: auto;
+
+	}
+
+}
+.notification-content {
+	.animated;
+	transform: translate3d(0, 100vh, 0);
+
+	@keyframes notificationContentHide {
+		from {
+			transform: translate3d(0, 0, 0);
+		}
+		to {
+			transform: translate3d(0, 100vh, 0);
+		}
+	}
+	@keyframes notificationContentShow {
+		from {
+			transform: translate3d(0, 100vh, 0);
+		}
+		to {
+			transform: translate3d(0, 0, 0);
+		}
+	}
+	&.notification-hide {
+
+		animation-name: notificationContentHide;
+		animation-duration: 1s;
+
+	}
+	&.notification-show {
+
+		animation-name: notificationContentShow;
+		animation-duration: 1s;
+
+	}
+	background:black;
+	
+	top: 20vh;
+	left: 5vw;
+
+	width: 90vw;
+	height: 60vh;
+
+	position:fixed;
+
+	z-index: 999999999999;
+
+	color:white;
+	
+	padding: 10px;
+
+	.content {
+		overflow-y: scroll;
+		
+		display:flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+		border: 3px solid @blue;
+
+		.title {
+			.text-center;
+			min-height: 20vh;
+			font-size: 2em;
+			padding: 10px;
+			line-height: 1.5em;
+
+			display:flex;
+			justify-content: center;
+			flex-direction: column;
+
+		}
+		.description {
+			.text-center;			
+			flex: 20;
+			padding: 10px;
+			font-size: 1.3em;
+			line-height: 1.3em;
+		}
+		.spacing {
+			height: 50px;
+		}
+	}
+}
+// .notification-content::after {
+// 	content: ""; 
+// 	position:absolute;
+// 	bottom: 0;
+// 	left: 0;
+// 	width: ~"calc(100% - 26px)";
+// 	height: 30px;
+// 	background:red;
+// 	margin: 13px;
+// 	opacity: 0.5;
+// }

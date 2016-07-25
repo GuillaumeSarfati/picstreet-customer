@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 60 40" enable-background="new 0 0 60 40" xml:space="preserve">
+<g>
+	<path fill="#F3F4F4" d="M60,35c0,2.8-2.2,5-5,5H5c-2.8,0-5-2.2-5-5V5c0-2.8,2.2-5,5-5h50c2.8,0,5,2.2,5,5V35z"/>
+	<g>
+		<g>
+			<circle fill="#009FDA" cx="26.8" cy="20" r="10"/>
+			<path fill="#009FDA" d="M26,10c5,0,10,4.5,10,10c0,5.5-5,10-10,10V10z"/>
+			<path fill="#009FDA" d="M26,30V10h7.2c5,0,10,4.5,10,10c0,5.5-5,10-10,10H26z"/>
+			<circle fill="#F3F4F4" cx="26.8" cy="20" r="9.4"/>
+			<g>
+				<path fill="#009FDA" d="M31.4,20c0-2.7-2.4-5-4.4-5.6v11.2C29,25,31.4,22.7,31.4,20z"/>
+			</g>
+			<g>
+				<path fill="#009FDA" d="M19.6,20c0,2.7,2.4,5,4.4,5.6V14.4C22,15,19.6,17.3,19.6,20z"/>
+			</g>
+		</g>
+		<path opacity="8.000000e-02" fill="#FFFFFF" enable-background="new    " d="M58.5,1.5C59.4,2.4,60,3.6,60,5v15v15
+			c0,1.4-0.6,2.6-1.5,3.5S56.4,40,55,40H30H5c-1.4,0-2.6-0.6-3.5-1.5L58.5,1.5z"/>
+		<g>
+			<path fill="#C1C1C1" d="M55,1c2.2,0,4,1.8,4,4v30c0,2.2-1.8,4-4,4H5c-2.2,0-4-1.8-4-4V5c0-2.2,1.8-4,4-4H55 M55,0H5
+				C2.2,0,0,2.2,0,5v30c0,2.8,2.2,5,5,5h50c2.8,0,5-2.2,5-5V5C60,2.2,57.8,0,55,0L55,0z"/>
+		</g>
+	</g>
+</g>
+</svg>
